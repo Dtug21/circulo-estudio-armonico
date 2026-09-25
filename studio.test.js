@@ -8,6 +8,7 @@ const source=fs.readFileSync(path.join(__dirname,'studio.js'),'utf8').replace(/b
 
 function studio(){
   const context=vm.createContext({
+    document:{querySelectorAll:()=>[]},
     localStorage:{getItem:()=>null,setItem:()=>{}},
     location:{search:'',href:'http://localhost/progresiones.html'},
     URLSearchParams,URL,console,setTimeout,clearTimeout
@@ -154,4 +155,13 @@ test('cada base tiene un timbre por pista y el cambio de kit no altera el MIDI',
   run('checkpoint();state.soundKit="dembow";restoreProject(undoStack.pop())');
   assert.equal(run('state.soundKit'),'techno');
   assert.equal(run('kitName("unknown")'),'house');
+});
+
+test('el dembow marca el cuarto pulso y VII menor funciona como paso',()=>{
+  const run=studio();
+  assert.deepEqual(Array.from(run('GROOVE_PRESETS.dembow.kick')),[0,4,8,12]);
+  run('state.mode="minor"');
+  assert.equal(run('describe({degree:6,kind:"triad",beats:4}).role'),'Paso');
+  run('state.mode="major"');
+  assert.equal(run('describe({degree:6,kind:"triad",beats:4}).role'),'Tensión');
 });
