@@ -1,4 +1,4 @@
-# Círculo — Estudio armónico
+# Círculo: estudio armónico
 
 Aplicación web estática para aprender el círculo de quintas, explorar tonalidades y escalas, crear progresiones, probar patrones rítmicos y guardar ideas musicales.
 
