@@ -1,5 +1,7 @@
 # Círculo: estudio armónico
 
+
+**Úsala en línea:** <https://dtug21.github.io/circulo-estudio-armonico/>
 Aplicación web estática para aprender el círculo de quintas, explorar tonalidades y escalas, crear progresiones, probar patrones rítmicos y guardar ideas musicales.
 
 ## Secciones
@@ -32,3 +34,7 @@ Busca la dirección IPv4 de la computadora con `ipconfig` y abre `http://IP-DE-L
 La sesión actual, las ideas y el borrador de recuperación se guardan en el almacenamiento local del navegador. No hay servidor, cuenta ni sincronización entre dispositivos. La exportación MIDI contiene notas, duraciones y tempo; los sonidos sintetizados de preescucha no se incluyen como audio.
 
 No requiere instalación de dependencias ni proceso de compilación.
+
+## Licencia
+
+MIT. Ver [LICENSE](LICENSE).
